@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "SafeStalk",
+  "version": "1.0",
+  "description": "View Facebook pages while disabling like and add friend interactions.",
+  "page_action" :
+  {
+    "default_icon" : "images/icon-19x19.png",
+    "default_title" : "Secretly Facebook Stalking"
+  },
+  "permissions": [
+    "tabs",
+    "storage"
+	],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+
+      "js": ["js/jquery-2.1.4.min.js", "js/filter.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons" : {
+    "48": "images/icon-48x48.png"
+  }
+}
